@@ -2,7 +2,7 @@
 #
 # Author: Simple Finance <ops@simple.com>
 # License: Apache License, Version 2.0
-# 
+#
 # Copyright 2013 Simple Finance Technology Corporation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -31,18 +31,18 @@ module InfluxDB
     end
 
     def self.render_config(hash, run_context)
-      require 'influxdb'
-      require 'influxdb/config'
-      f = Chef::Resource::File.new('/opt/influxdb/shared/config.json', run_context)
-      f.owner('root')
-      f.mode(00644)
-      f.content(InfluxDB::Config.new(hash).render + "\n")
-      f.run_action(:create)
-      f.notifies(:restart, 'service[influxdb]', :delayed)
+      # require 'influxdb'
+      # require 'influxdb/config'
+      # f = Chef::Resource::File.new('/opt/influxdb/shared/config.json', run_context)
+      # f.owner('root')
+      # f.mode(00644)
+      # f.content(InfluxDB::Config.new(hash).render + "\n")
+      # f.run_action(:create)
+      # f.notifies(:restart, 'service[influxdb]', :delayed)
 
-      return f
+      # return f
+      return true
     end
 
   end
 end
-
